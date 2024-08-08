@@ -1,0 +1,23 @@
+.themeSwitcher {
+  all: unset;
+
+  padding: 8px 16px;
+
+  font-size: 14px;
+
+  border: 1px solid var(--secondary-color);
+  border-radius: 8px;
+
+  background-color: var(--bg-color);
+
+  cursor: pointer;
+
+  transition-property: background-color, color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+
+  &:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+  }
+}
