@@ -1,0 +1,30 @@
+@import "./reset.scss";
+@import "./variables/global";
+@import "./themes/light";
+@import "./themes/dark";
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  min-height: 100vh;
+
+  font: var(--font-m);
+  color: var(--primary-color);
+
+  background-color: var(--bg-color);
+}
+
+.content-page {
+  display: flex;
+
+  width: 100%;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+
+  padding: 20px;
+}

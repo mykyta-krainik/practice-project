@@ -1,0 +1,15 @@
+.button {
+  width: fit-content;
+  height: fit-content;
+
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.clean {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
