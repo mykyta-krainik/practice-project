@@ -14,6 +14,21 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     type: 'asset/resource',
   };
 
+  const babelLoader = {
+    test: /\.(js|ts|tsx)$/,
+    exclude: /node_modules/,
+    use: [
+      {
+        loader: 'babel-loader',
+        options: {
+          plugins: [
+            isDev && require.resolve('react-refresh/babel'),
+          ].filter(Boolean)
+        }
+      }
+    ],
+  };
+
   const sassLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -40,6 +55,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   };
 
   return [
+    babelLoader,
     typescriptLoader,
     svgLoader,
     fileLoader,
