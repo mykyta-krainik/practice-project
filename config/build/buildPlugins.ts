@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
 
 import { BuildOptions } from './types/config';
 
@@ -20,5 +21,6 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
     }),
     new webpack.HotModuleReplacementPlugin(),
     isDev && new ReactRefreshWebpackPlugin(),
+    new ESLintPlugin(),
   ].filter(Boolean);
 }
