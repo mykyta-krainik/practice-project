@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Counter } from '@/shared/ui';
 
-export default function MainPage() {
+const MainPage = () => {
   const { t } = useTranslation('main');
 
   return (
@@ -12,4 +12,6 @@ export default function MainPage() {
       <Counter />
     </div>
   );
-}
+};
+
+export default MainPage;

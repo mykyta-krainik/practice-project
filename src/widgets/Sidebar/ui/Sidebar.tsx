@@ -1,10 +1,10 @@
-import type { FC, ReactNode } from "react";
+import type { FC, ReactNode } from 'react';
 import { useState } from 'react';
 import clsx from 'clsx';
 
 import { Button, ButtonTheme } from '@/shared/ui';
 
-import styles from "./Sidebar.module.scss";
+import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
   children?: ReactNode;
@@ -19,7 +19,7 @@ export const Sidebar: FC<SidebarProps> = ({ children }) => {
         styles.sidebar,
         {
           [styles.collapsed]: isCollapsed,
-        }
+        },
       )}
     >
       <Button

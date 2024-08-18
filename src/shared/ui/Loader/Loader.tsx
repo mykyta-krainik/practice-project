@@ -1,7 +1,5 @@
 import { type FC } from 'react';
 
-export const Loader: FC = () => {
-  return (
-    <div>Loading...</div>
-  );
-};
+export const Loader: FC = () => (
+  <div>Loading...</div>
+);

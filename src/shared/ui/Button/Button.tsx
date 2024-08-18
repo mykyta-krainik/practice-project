@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import {
   type ButtonHTMLAttributes,
   type FC,
-  type ReactNode
-} from "react";
+  type ReactNode,
+} from 'react';
 
 import styles from './Button.module.scss';
 
@@ -21,13 +21,12 @@ export const Button: FC<ButtonProps> = ({
   className,
   children,
   ...restProps
-}) => {
-  return (
-    <button
-      className={clsx(styles.button, styles[theme], className)}
-      {...restProps}
-    >
-      {children}
-    </button>
-  );
-};
+}) => (
+  <button
+    type="button"
+    className={clsx(styles.button, styles[theme], className)}
+    {...restProps}
+  >
+    {children}
+  </button>
+);

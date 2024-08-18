@@ -3,7 +3,7 @@ type Mods = Record<string, boolean>;
 export default function classnames(
   cls: string,
   mods?: Mods,
-  additionals?: string[]
+  additionals?: string[],
 ): string {
   if (!cls) {
     return '';

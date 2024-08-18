@@ -3,12 +3,10 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { ThemeProvider } from '@/shared/providers';
 
-export const Providers: FC = ({ children }) => {
-  return (
-    <BrowserRouter>
-      <ThemeProvider>
-        {children}
-      </ThemeProvider>
-    </BrowserRouter>
-  );
-};
+export const Providers: FC = ({ children }) => (
+  <BrowserRouter>
+    <ThemeProvider>
+      {children}
+    </ThemeProvider>
+  </BrowserRouter>
+);

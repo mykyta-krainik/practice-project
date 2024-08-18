@@ -1,8 +1,8 @@
-import { type FC, type ReactNode } from "react";
+import { type FC, type ReactNode } from 'react';
 import { Link, type LinkProps } from 'react-router-dom';
 
-import styles from './AppLink.module.scss';
 import clsx from 'clsx';
+import styles from './AppLink.module.scss';
 
 export enum AppLinkTheme {
   PRIMARY = 'primary',
@@ -20,14 +20,12 @@ export const AppLink: FC<AppLinkProps> = ({
   className,
   theme = AppLinkTheme.PRIMARY,
   ...restProps
-}) => {
-  return (
-    <Link
-      to={to}
-      className={clsx(styles.appLink, styles[theme], className)}
-      {...restProps}
-    >
-      {children}
-    </Link>
-  );
-};
+}) => (
+  <Link
+    to={to}
+    className={clsx(styles.appLink, styles[theme], className)}
+    {...restProps}
+  >
+    {children}
+  </Link>
+);

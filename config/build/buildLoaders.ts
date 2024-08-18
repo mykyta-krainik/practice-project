@@ -23,9 +23,9 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         options: {
           plugins: [
             isDev && require.resolve('react-refresh/babel'),
-          ].filter(Boolean)
-        }
-      }
+          ].filter(Boolean),
+        },
+      },
     ],
   };
 
@@ -41,8 +41,8 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             localIdentName: isDev
               ? '[path][name]__[local]--[hash:base64:8]'
               : '[hash:base64:8]--[local]',
-          }
-        }
+          },
+        },
       },
       'sass-loader',
     ],
@@ -59,6 +59,6 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     typescriptLoader,
     svgLoader,
     fileLoader,
-    sassLoader
+    sassLoader,
   ];
 }

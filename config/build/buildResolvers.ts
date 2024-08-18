@@ -7,6 +7,6 @@ export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
     extensions: ['.tsx', '.ts', '.js'],
     alias: {
       '@': options.paths.src,
-    }
+    },
   };
 }
