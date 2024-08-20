@@ -6,6 +6,7 @@ export interface BuildPaths {
   output: string;
   html: string;
   src: string;
+  eslintConfig: string;
 }
 
 export interface BuildEnv {

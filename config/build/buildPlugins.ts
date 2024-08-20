@@ -21,6 +21,12 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
     }),
     new webpack.HotModuleReplacementPlugin(),
     isDev && new ReactRefreshWebpackPlugin(),
-    new ESLintPlugin(),
+    new ESLintPlugin({
+      overrideConfigFile: paths.eslintConfig,
+      context: paths.src,
+      configType: 'eslintrc',
+      quiet: false,
+      extensions: ['.ts', '.tsx'],
+    }),
   ].filter(Boolean);
 }
