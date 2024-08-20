@@ -5,5 +5,11 @@
       "home": "Home",
       "about": "About"
     }
+  },
+  "shared": {
+    "loading": "Loading..."
+  },
+  "sidebar": {
+    "toggle": "Toggle"
   }
 }

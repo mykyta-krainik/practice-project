@@ -4,6 +4,7 @@ import clsx from 'clsx';
 
 import { Button, ButtonTheme } from '@/shared/ui';
 
+import { useTranslation } from 'react-i18next';
 import styles from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -11,6 +12,8 @@ interface SidebarProps {
 }
 
 export const Sidebar: FC<SidebarProps> = ({ children }) => {
+  const { t } = useTranslation();
+
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
@@ -27,7 +30,7 @@ export const Sidebar: FC<SidebarProps> = ({ children }) => {
         className={styles.toggleButton}
         onClick={() => setIsCollapsed((prev) => !prev)}
       >
-        Toggle
+        {t('sidebar.toggle')}
       </Button>
 
       <section className={styles.switchers}>{children}</section>
