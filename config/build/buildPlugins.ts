@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
+import StylelintPlugin from 'stylelint-webpack-plugin';
 
 import { BuildOptions } from './types/config';
 
@@ -27,6 +28,9 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
       configType: 'eslintrc',
       quiet: false,
       extensions: ['.ts', '.tsx'],
+    }),
+    isDev && new StylelintPlugin({
+      context: paths.src,
     }),
   ].filter(Boolean);
 }
