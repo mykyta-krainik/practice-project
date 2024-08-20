@@ -21,7 +21,7 @@ const App = () => {
       <Suspense fallback={null}>
         <Navbar />
 
-        <main className="content-page">
+        <main className="contentPage">
           <Sidebar>
             <ThemeSwitcher />
 
