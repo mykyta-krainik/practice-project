@@ -11,5 +11,10 @@
   },
   "sidebar": {
     "toggle": "Toggle"
+  },
+  "notFoundPage": {
+    "title": "404",
+    "subtitle": "Page not found",
+    "button": "Back to home"
   }
 }
