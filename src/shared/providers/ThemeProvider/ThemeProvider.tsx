@@ -10,7 +10,8 @@ const getDefaultTheme = () => {
     return storedTheme;
   }
 
-  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const prefersDarkMode = window
+    .matchMedia('(prefers-color-scheme: dark)').matches;
 
   if (prefersDarkMode) {
     return Theme.DARK;
@@ -36,14 +37,18 @@ export const ThemeProvider: FC = ({ children }) => {
       setTheme(newColorScheme);
     };
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', changeTheme);
+    const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+    matchMedia.addEventListener('change', changeTheme);
 
     return () => {
-      window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change', changeTheme);
+      matchMedia.removeEventListener('change', changeTheme);
     };
   }, []);
 
   return (
-    <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>
+    <ThemeContext.Provider value={contextValue}>
+      {children}
+    </ThemeContext.Provider>
   );
 };
