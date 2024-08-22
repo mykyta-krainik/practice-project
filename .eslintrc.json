@@ -87,6 +87,12 @@
         "markupOnly": true,
         "ignoreAttribute": ["to"]
       }
+    ],
+    "max-len": [
+      "error",
+      {
+        "ignoreComments": true
+      }
     ]
   },
   "settings": {
