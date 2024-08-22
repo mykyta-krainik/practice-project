@@ -1,8 +1,17 @@
 import { type FC } from 'react';
-import { useTranslation } from 'react-i18next';
+import clsx from 'clsx';
 
-export const Loader: FC = () => {
-  const { t } = useTranslation();
+import styles from './Loader.module.scss';
 
-  return <div>{t('shared.loading')}</div>;
+type LoaderProps = {
+  className?: string;
 };
+
+export const Loader: FC<LoaderProps> = ({ className }) => (
+  <div className={clsx(styles.ldsEllipsis, className)}>
+    <div />
+    <div />
+    <div />
+    <div />
+  </div>
+);
