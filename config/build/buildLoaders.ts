@@ -14,6 +14,14 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     type: 'asset/resource',
   };
 
+  const fontsLoader: webpack.RuleSetRule = {
+    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+    type: 'asset/resource',
+    generator: {
+      filename: 'fonts/[name].[contenthash][ext]',
+    },
+  };
+
   const babelLoader = {
     test: /\.(js|ts|tsx)$/,
     exclude: /node_modules/,
@@ -59,6 +67,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     typescriptLoader,
     svgLoader,
     fileLoader,
+    fontsLoader,
     sassLoader,
   ];
 }

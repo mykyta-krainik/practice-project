@@ -7,7 +7,9 @@ import StylelintPlugin from 'stylelint-webpack-plugin';
 
 import { BuildOptions } from './types/config';
 
-export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins(
+  { paths, isDev }: BuildOptions,
+): webpack.WebpackPluginInstance[] {
   return [
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
