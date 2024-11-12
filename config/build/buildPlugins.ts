@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import ESLintPlugin from 'eslint-webpack-plugin';
 import StylelintPlugin from 'stylelint-webpack-plugin';
+import CompressionWebpackPlugin from 'compression-webpack-plugin';
 
 import { BuildOptions } from './types/config';
 
@@ -14,6 +15,12 @@ export function buildPlugins(
     new webpack.ProgressPlugin(),
     new HtmlWebpackPlugin({
       template: paths.html,
+    }),
+    !isDev && new CompressionWebpackPlugin({
+      algorithm: 'gzip',
+      test: /\.(html|js|css|jpg|png|svg)$/,
+      threshold: 5120, // 5KB
+      minRatio: 0.7,
     }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
