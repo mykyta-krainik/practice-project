@@ -9,6 +9,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
 import { LanguageSwitcher } from '@/widgets/LanguageSwitcher';
 
+import { ErrorBoundary } from './providers/ErrorBoundary';
 import { AppRouter } from './providers/router';
 
 import './styles/index.scss';
@@ -19,17 +20,19 @@ const App = () => {
   return (
     <div className={clsx('app', theme)}>
       <Suspense fallback={null}>
-        <Navbar />
+        <ErrorBoundary>
+          <Navbar />
 
-        <main className="contentPage">
-          <Sidebar>
-            <ThemeSwitcher />
+          <main className="contentPage">
+            <Sidebar>
+              <ThemeSwitcher />
 
-            <LanguageSwitcher />
-          </Sidebar>
+              <LanguageSwitcher />
+            </Sidebar>
 
-          <AppRouter />
-        </main>
+            <AppRouter />
+          </main>
+        </ErrorBoundary>
       </Suspense>
     </div>
   );

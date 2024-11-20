@@ -16,5 +16,9 @@
     "title": "404",
     "subtitle": "Page not found",
     "button": "Back to home"
+  },
+  "defaultPageError": {
+    "title": "Something went wrong",
+    "button": "Reload"
   }
 }
