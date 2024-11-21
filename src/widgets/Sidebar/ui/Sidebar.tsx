@@ -18,6 +18,7 @@ export const Sidebar: FC<SidebarProps> = ({ children }) => {
 
   return (
     <aside
+      data-testid="sidebar"
       className={clsx(
         styles.sidebar,
         {
@@ -29,6 +30,7 @@ export const Sidebar: FC<SidebarProps> = ({ children }) => {
         theme={ButtonTheme.CLEAN}
         className={styles.toggleButton}
         onClick={() => setIsCollapsed((prev) => !prev)}
+        data-testid="sidebar-toggle-button"
       >
         {t('sidebar.toggle')}
       </Button>
