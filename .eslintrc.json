@@ -86,7 +86,7 @@
       "error",
       {
         "markupOnly": true,
-        "ignoreAttribute": ["to"]
+        "ignoreAttribute": ["to", "data-testid"]
       }
     ],
     "max-len": [
@@ -109,5 +109,23 @@
   "globals": {
     "__IS_DEV__": true
   },
-  "ignorePatterns": ["/build/**/*.js"]
-}
+  "ignorePatterns": ["/build/**/*.js"],
+  "overrides": [
+    {
+      "files": [
+        "**/*.test.js",
+        "**/*.test.jsx",
+        "**/*.spec.js",
+        "**/*.spec.jsx",
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.spec.ts",
+        "**/*.spec.tsx",
+        "/src/shared/tests/**/*.tsx?"
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+        "i18next/no-literal-string": "off"
+      }
+    }
+  ]}

@@ -14,6 +14,7 @@ export default {
   ],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
+    '\\.(css|scss|sass|less)$': 'identity-obj-proxy',
   },
 
   rootDir: '../../',
@@ -28,4 +29,5 @@ export default {
   ],
 
   verbose: true,
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
 };
