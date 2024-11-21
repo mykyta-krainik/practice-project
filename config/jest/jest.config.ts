@@ -12,6 +12,9 @@ export default {
     'json',
     'node',
   ],
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
 
   rootDir: '../../',
 
